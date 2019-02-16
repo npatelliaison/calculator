@@ -15,7 +15,8 @@ def divide(x, y):
     div = x / y
     print("Division of two numbers i: ", str(div))
 
-add(4, 5)
-sub(10, 4)
-multiply(10, 10)
-divide(40, 10)
+
+# add(4, 5)
+# sub(10, 4)
+# multiply(10, 10)
+# divide(40, 10)
