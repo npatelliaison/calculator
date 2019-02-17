@@ -12,17 +12,21 @@ class infoForm(FlaskForm):
     number1 = StringField("First Number: ")
     number2 = StringField("Second Number: ")
     submit = SubmitField("Submit")
+    result = StringField("Result: ")
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
     
     n1 = False
     n2 = False
+    result = False
     form = infoForm()
-    if form.validate_on_submit():
-       session['n1'] = form.number1.data
-       session['n2'] = form.number2.data
-       return redirect(url_for("result"))
+    if  form.validate_on_submit():
+        session['n1'] = form.number1.data
+        session['n2'] = form.number2.data
+        session['n3'] = form.number1.data + form.number2.data
+
+        return redirect(url_for("result"))
 
     return render_template('index.html',form=form)
 
