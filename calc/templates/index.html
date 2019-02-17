@@ -1,0 +1,17 @@
+{# INDEX.HTML #}
+<p>
+<!-- {% if number1 %}
+The number you entered is {{number1}}
+{% else %}
+Please enter first number:
+{% endif %} -->
+</p>
+
+<form method='POST'>
+    {{ form.hidden_tag() }}
+    {{ form.number1.label }} {{ form.number1 }}
+    {{ form.number2.label }} {{ form.number2 }}
+    {{ form.submit()}}
+    
+
+</form>
