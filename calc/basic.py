@@ -5,8 +5,8 @@ from wtforms import IntegerField, SubmitField, FloatField, StringField
 from common import add
 
 app = Flask(__name__)
-
 app.config['SECRET_KEY'] = 'calculatorkey'
+
 
 class infoForm(FlaskForm):
     number1 = IntegerField("First Number: ")
@@ -24,8 +24,8 @@ def index():
     if  form.validate_on_submit():
         session['n1'] = form.number1.data
         session['n2'] = form.number2.data
-        session['n3'] = form.number1.data + form.number2.data
- #       result = add(n1, n2)
+ #       session['n3'] = form.number1.data + form.number2.data
+        session['n3'] = add(session['n1'], session['n2'])
         return redirect(url_for('result'))
 
     return render_template('index.html',form=form)
