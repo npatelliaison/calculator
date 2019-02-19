@@ -1,7 +1,7 @@
 
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, session, redirect, url_for
 from flask_wtf import FlaskForm
-from wtforms import IntegerField, SubmitField, FloatField, StringField
+from wtforms import IntegerField, SubmitField
 from common import add
 
 app = Flask(__name__)
@@ -11,8 +11,11 @@ app.config['SECRET_KEY'] = 'calculatorkey'
 class infoForm(FlaskForm):
     number1 = IntegerField("First Number: ")
     number2 = IntegerField("Second Number: ")
-    submit = SubmitField("Submit")
     n3 = IntegerField("Result: ")
+    Add = SubmitField("Add")
+    Sub = SubmitField("Sub")
+    Multiply = SubmitField("Multiply")
+    Divide = SubmitField("Divide")
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
