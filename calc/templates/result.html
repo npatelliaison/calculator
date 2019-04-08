@@ -1,0 +1,18 @@
+{% from "macros.html" import add %}
+{% from "macros.html" import subtract %}
+{% from "macros.html" import multiply %}
+{% from "macros.html" import divide %}
+
+
+
+<html>
+    <head>
+        <title>Result of operation of two numbers</title>
+    </head>
+    <body>
+        Addition of two numbers is: {{ add(n1,n2) }}
+        Subtraction of two numbers is: {{ subtract(n1, n2) }}
+        Multiplication of two number is: {{ multiply(n1, n2) }}
+        Division of two numbers is: {{ divide(n1, n2) }}
+    </body>
+</html>
